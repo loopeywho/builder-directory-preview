@@ -1,50 +1,26 @@
 [
   {
-    "id": "supabase",
-    "name": "Supabase",
-    "category": "Databases",
-    "use_case": "Build customer accounts with relational application data",
-    "audience": "Small SaaS builders prepared to design access policies",
-    "verdict": "A researched starting choice when Postgres, authentication and storage belong together.",
-    "tradeoff": "You still own row-level security, backups and usage controls. .NET tracing excludes Realtime and needs an exporter; this does not establish end-to-end production observability.",
-    "privacy": "Test isolation with two separate accounts; do not place service-role credentials in browser code. Review hosting region and retention requirements.",
-    "pricing": "Checked 2026-10-19: Free $0/month, 500 MB database, 2 active projects, paused after one week of inactivity. Pro from $25/month; additional projects from $10/month and usage overages apply. Telemetry exporter costs are separate.",
-    "pricing_url": "https://supabase.com/pricing",
-    "url": "https://supabase.com/",
-    "sources": [
-      "https://supabase.com/changelog",
-      "https://supabase.com/pricing"
-    ],
-    "checked": "2026-10-19",
-    "release_date": "2026-10-14",
-    "evidence": "researched",
-    "news_kind": "release",
-    "news": "October 14: Supabase .NET SDK adds traces and metrics for Auth, Postgrest, Storage and Functions via System.Diagnostics. Realtime is not instrumented. Workflow: instrument a staging account-signup flow, collect spans in your own exporter, then inspect slow database requests. Vendor-documented, not hands-on tested.",
-    "event_id": "supabase|dotnet-telemetry|2026-10-14",
-    "event_date": "2026-10-19"
-  },
-  {
     "id": "claude-code",
     "name": "Claude Code",
     "category": "Coding agents",
     "use_case": "Make a bounded repository change while tracking coding-agent usage",
     "audience": "Terminal-oriented builders who can review diffs and run project tests",
     "verdict": "A researched candidate for a scoped edit/test/review loop. Use /usage to inspect consumption; do not confuse an API cost estimate with a subscription invoice.",
-    "tradeoff": "v2.1.303 release notes only say bug fixes and reliability improvements; no specific performance gain established. Costs depend on model, context and automation. Not compared on the same brief against other agents.",
+    "tradeoff": "Gateway retries and permission fixes are vendor-reported, not independently tested. Monitor availability now extends to Bedrock, Vertex and Foundry, with long foreground sleeps blocked there too; verify scripts and denial behavior on your own provider before upgrading production.",
     "privacy": "Review repository and tool permissions, exclude secrets, and inspect provider data terms before sending private source. Human review remains necessary.",
-    "pricing": "Checked 2026-10-19 in official costs docs: API use is token-billed; Pro/Max subscribers have included usage subject to plan limits. /usage session dollars estimate API list-price consumption, not subscription billing. No fixed subscription price verified in this run; consult linked plan pricing before buying.",
+    "pricing": "Checked 2026-10-26 in official costs docs: API use is token-billed; Pro/Max subscribers have included usage subject to plan limits. /usage session dollars estimate API list-price consumption, not subscription billing. No fixed subscription price verified in this run; consult linked plan pricing before buying.",
     "pricing_url": "https://code.claude.com/docs/en/costs.md",
     "url": "https://code.claude.com/docs/en/overview",
     "sources": [
-      "https://github.com/anthropics/claude-code/releases/tag/v2.1.303",
+      "https://github.com/anthropics/claude-code/releases/tag/v2.1.310",
       "https://code.claude.com/docs/en/costs.md"
     ],
-    "checked": "2026-10-19",
-    "release_date": "2026-10-18",
+    "checked": "2026-10-26",
+    "release_date": "2026-10-23",
     "evidence": "researched",
-    "news_kind": "new-to-directory / maintenance release",
-    "news": "v2.1.303 published October 18 with downloadable assets; notes report only bug fixes and reliability improvements. Newly admitted to this catalog after costs documentation became readable. Workflow: scope one repository fix, review the diff, run existing tests, then inspect /usage. No vendor execution performed.",
-    "event_id": "claude-code|v2.1.303|2026-10-18",
-    "event_date": "2026-10-19"
+    "news_kind": "release",
+    "news": "v2.1.310 published October 23: Monitor tools extend to Bedrock, Vertex and Foundry; fixes address gateway compatibility, dense-context compaction and Windows hook permission handling. Workflow: use an isolated repository, run a bounded change through your existing gateway, review symlink prompts and hook denial behavior, then compare test results before adopting. Vendor notes only; no gateway or agent execution performed.",
+    "event_id": "claude-code|v2.1.310|2026-10-23",
+    "event_date": "2026-10-26"
   }
 ]
