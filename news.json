@@ -22,5 +22,29 @@
     "news": "v2.1.310 published October 23: Monitor tools extend to Bedrock, Vertex and Foundry; fixes address gateway compatibility, dense-context compaction and Windows hook permission handling. Workflow: use an isolated repository, run a bounded change through your existing gateway, review symlink prompts and hook denial behavior, then compare test results before adopting. Vendor notes only; no gateway or agent execution performed.",
     "event_id": "claude-code|v2.1.310|2026-10-23",
     "event_date": "2026-10-26"
+  },
+  {
+    "id": "vibeide",
+    "name": "VibeiDE",
+    "category": "Coding agents",
+    "use_case": "Queue and review several local coding agents without losing task history",
+    "audience": "Builders already using Claude Code, Codex or OpenCode across projects",
+    "verdict": "New, unranked candidate when terminal juggling becomes a problem; start with one read-only task before enabling parallel writes. A queue is not filesystem isolation.",
+    "tradeoff": "Paid orchestration on top of separate provider costs. Select independent worktrees yourself. Maker reports full validation on macOS; Windows support has narrower validation and Linux is experimental. Not installed or benchmarked here.",
+    "privacy": "Maker says task history is local and credentials stay with installed CLIs, but prompts reach your model provider. Account/licence checks require connectivity; optional mobile transport has separate boundaries. Local does not mean offline or no data egress.",
+    "pricing": "Checked 2026-10-27: 14-day device-bound trial, no card. Solo $7.99 USD/month or $79/year; lifetime $249 once; Team $14.99/seat/month, before tax. Launch offers end January 1, 2027 00:00 UTC; new recurring prices then $9.99/month, $99/year and $19.99/seat/month; lifetime sale ends. Active subscriptions retain starting price. Provider usage/subscriptions extra; checkout not tested.",
+    "pricing_url": "https://vibeide.dev/docs/product-facts/",
+    "url": "https://vibeide.dev/",
+    "sources": [
+      "https://vibeide.dev/docs/product-facts/",
+      "https://vibeide.dev/releases/desktop/"
+    ],
+    "checked": "2026-10-27",
+    "release_date": null,
+    "evidence": "new/unranked",
+    "news_kind": "new-to-directory",
+    "news": "New to this catalog, not a verified new launch: official downloads advertise Desktop 0.8.21; no original release date established. Product guide reviewed October 21 describes per-project queues and completion review. Workflow: select a scratch checkout, ask one installed agent to identify entry point and test command, then verify both before allowing edits. Parallel write tasks need separate worktrees.",
+    "event_id": "vibeide|new-to-directory|2026-10-27",
+    "event_date": "2026-10-27"
   }
 ]
