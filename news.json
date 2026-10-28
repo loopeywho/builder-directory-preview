@@ -70,5 +70,55 @@
     "news": "v2.1.311 published October 26: fixes premature removal of isolated worktrees used by background subagents, late-connected MCP tools missing from subagents, and stale instruction files after compaction. Benefits builders running multi-agent repository work. Workflow: on a disposable checkout, run a bounded subagent task, check its worktree remains available until completion, then review diffs and tests. Vendor release notes only; not an executed agent evaluation.",
     "event_id": "claude-code-v2.1.311-2026-10-28",
     "event_date": "2026-10-28"
+  },
+  {
+    "id": "contextgem",
+    "name": "ContextGem",
+    "category": "AI APIs",
+    "use_case": "Extract document facts with source references and a chosen output language",
+    "audience": "Python builders creating multilingual document-review workflows",
+    "verdict": "New/unranked candidate when extracted fields need traceable source references rather than an uncited chat answer. Evaluate on redacted sample documents before adoption.",
+    "tradeoff": "Citations do not prove extraction or translation accuracy. Python >=3.11,<3.15; PDF and DOCX conversion uses an optional Docling extra. Version 0.x integrations require migration. Not installed or benchmarked here.",
+    "privacy": "Cloud models receive document content; local orchestration does not guarantee private inference. Review model retention and redact sensitive data. Treat document text as untrusted input.",
+    "pricing": "Checked 2026-10-28: official README calls the library free and open source; package metadata and LICENSE confirm Apache-2.0. Model-provider charges or local compute costs are separate. No measured extraction cost or paid service quote established.",
+    "pricing_url": "https://github.com/shcherbak-ai/contextgem#readme",
+    "url": "https://contextgem.shcherbak.ai/",
+    "sources": [
+      "https://github.com/shcherbak-ai/contextgem/releases/tag/v1.5.0",
+      "https://pypi.org/project/contextgem/1.5.0/",
+      "https://github.com/shcherbak-ai/contextgem#readme",
+      "https://github.com/shcherbak-ai/contextgem/blob/main/LICENSE"
+    ],
+    "checked": "2026-10-28",
+    "release_date": "2026-10-27",
+    "evidence": "new/unranked",
+    "news_kind": "new-to-directory",
+    "news": "New to this catalog; v1.5.0 released October 27, not a new product launch. output_language now accepts BCP 47 language tags beyond en/adapt for string values and justifications. Workflow: use a redacted bilingual agreement, request payment fields and sentence references with output_language='zh-Hans', then compare every value and citation to the original. Maker-documented workflow, not an executed extraction test.",
+    "event_id": "contextgem|v1.5.0|2026-10-28",
+    "event_date": "2026-10-28"
+  },
+  {
+    "id": "claude-code",
+    "name": "Claude Code",
+    "category": "Coding agents",
+    "use_case": "Make a bounded repository change while tracking coding-agent usage",
+    "audience": "Terminal-oriented builders who can review diffs and run project tests",
+    "verdict": "A researched candidate for a scoped edit/test/review loop. Use /usage to inspect consumption; do not confuse an API cost estimate with a subscription invoice.",
+    "tradeoff": "v2.1.312 fixes are vendor-reported, not independently tested. Large instruction files and directory-scoped skills still need regression tests. Custom cloud model names now use a shorter system prompt by default; review that change before upgrading.",
+    "privacy": "Review repository and tool permissions, exclude secrets, and inspect provider data terms before sending private source. Human review remains necessary.",
+    "pricing": "Checked 2026-10-28 in official costs docs: API use is token-billed; Pro/Max subscribers have included usage subject to plan limits. /usage session dollars estimate API list-price consumption, not subscription billing. No fixed subscription price verified in this run; consult linked plan pricing before buying.",
+    "pricing_url": "https://code.claude.com/docs/en/costs.md",
+    "url": "https://code.claude.com/docs/en/overview",
+    "sources": [
+      "https://github.com/anthropics/claude-code/releases/tag/v2.1.312",
+      "https://code.claude.com/docs/en/costs.md"
+    ],
+    "checked": "2026-10-28",
+    "release_date": "2026-10-27",
+    "evidence": "researched",
+    "news_kind": "release",
+    "news": "v2.1.312 published October 27: fixes overwriting large instruction files after partial reads, missing directory-scoped skills after Bash cd, and Code Review processing outdated commits after delayed GitHub events. Benefits repository builders relying on persistent instructions. Workflow: on a disposable checkout, change into a nested directory, verify its scoped instructions load, then inspect the full diff and tests. Vendor release notes only; not hands-on tested.",
+    "event_id": "claude-code|v2.1.312|2026-10-28",
+    "event_date": "2026-10-28"
   }
 ]
