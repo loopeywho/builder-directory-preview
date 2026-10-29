@@ -120,5 +120,30 @@
     "news": "v2.1.312 published October 27: fixes overwriting large instruction files after partial reads, missing directory-scoped skills after Bash cd, and Code Review processing outdated commits after delayed GitHub events. Benefits repository builders relying on persistent instructions. Workflow: on a disposable checkout, change into a nested directory, verify its scoped instructions load, then inspect the full diff and tests. Vendor release notes only; not hands-on tested.",
     "event_id": "claude-code|v2.1.312|2026-10-28",
     "event_date": "2026-10-28"
+  },
+  {
+    "id": "opera-webai",
+    "name": "Opera WebAI",
+    "category": "AI APIs",
+    "use_case": "Build an opt-in browser extension that classifies page text locally",
+    "audience": "JavaScript builders targeting supported Opera desktop users",
+    "verdict": "New/unranked candidate for a small local-text feature without a cloud inference backend. Start with Opera One and detect API availability; not a cross-browser production default.",
+    "tradeoff": "Early preview on Apple-silicon Macs and 64-bit Intel/AMD Windows; not Intel Macs, Linux or Windows on Arm. Official pages disagree on GX/Neon rollout: press release says to follow, blog says available. Installed versions and runtime behavior not tested; hardware affects performance.",
+    "privacy": "Opera says inference runs on-device, with opt-in model download and site-specific permission. This does not prove a website or extension makes no other network requests. Inspect permissions and network behavior before processing sensitive text.",
+    "pricing": "Checked 2026-10-29: official press release describes no account, no fee and no AI subscription for local WebAI use; no per-request cloud inference fee. Device resources and model download are still required. This is not a price claim for Opera Neon or other paid browser services.",
+    "pricing_url": "https://press.opera.com/2026/10/27/opera-doubles-down-on-local-ai-shipping-models-directly-in-its-browsers/",
+    "url": "https://next.opera.com/web-ai",
+    "sources": [
+      "https://press.opera.com/2026/10/27/opera-doubles-down-on-local-ai-shipping-models-directly-in-its-browsers/",
+      "https://next.opera.com/blog/web-ai-local-ai/",
+      "https://next.opera.com/web-ai"
+    ],
+    "checked": "2026-10-29",
+    "release_date": "2026-10-27",
+    "evidence": "new/unranked",
+    "news_kind": "new-to-directory / early preview",
+    "news": "October 27 press announcement introduces opt-in local Prompt, Decision and Semantic Embeddings capabilities; the developer blog bears October 22, so original earliest availability is uncertain. Workflow: enable Web AI API in Opera One settings, check playground availability, then classify redacted article paragraphs and manually compare labels. Proposed workflow, not an executed vendor test. Use a non-AI fallback for unsupported browsers.",
+    "event_id": "opera-webai|preview-announcement|2026-10-27",
+    "event_date": "2026-10-29"
   }
 ]
