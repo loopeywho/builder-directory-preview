@@ -145,5 +145,54 @@
     "news": "October 27 press announcement introduces opt-in local Prompt, Decision and Semantic Embeddings capabilities; the developer blog bears October 22, so original earliest availability is uncertain. Workflow: enable Web AI API in Opera One settings, check playground availability, then classify redacted article paragraphs and manually compare labels. Proposed workflow, not an executed vendor test. Use a non-AI fallback for unsupported browsers.",
     "event_id": "opera-webai|preview-announcement|2026-10-27",
     "event_date": "2026-10-29"
+  },
+  {
+    "id": "claude-code",
+    "name": "Claude Code",
+    "category": "Coding agents",
+    "use_case": "Make a bounded repository change while tracking coding-agent usage",
+    "audience": "Terminal-oriented builders who can review diffs and run project tests",
+    "verdict": "A researched candidate for a scoped edit/test/review loop. Use /usage to inspect consumption; do not confuse an API cost estimate with a subscription invoice.",
+    "tradeoff": "v2.1.314 changes are vendor-reported, not independently tested. The new working-directory write restriction explicitly covers Write, Edit and NotebookEdit; do not mistake it for a complete shell/MCP sandbox. Test permissions and failure handling on a disposable checkout before upgrading.",
+    "privacy": "Review repository and tool permissions, exclude secrets, and inspect provider data terms before sending private source. Human review remains necessary.",
+    "pricing": "Checked 2026-10-30 in official costs docs: API use is token-billed; Pro/Max/Ultra subscribers have included usage subject to plan limits. /usage session dollars estimate API consumption, not subscription billing; managed modelPricing can substitute contracted rates. No fixed subscription price verified; consult linked plan pricing before buying.",
+    "pricing_url": "https://code.claude.com/docs/en/costs.md",
+    "url": "https://code.claude.com/docs/en/overview",
+    "sources": [
+      "https://github.com/anthropics/claude-code/releases/tag/v2.1.314",
+      "https://code.claude.com/docs/en/costs.md"
+    ],
+    "checked": "2026-10-30",
+    "release_date": "2026-10-30",
+    "evidence": "researched",
+    "news_kind": "release",
+    "news": "v2.1.314 published October 30 adds permissions.blockWritesOutsideWorkingDirectories for Write, Edit and NotebookEdit in every permission mode. Also fixes claude -p returning exit 0 with no output on startup failure. Benefits builders running unattended repository tasks. Proposed workflow: on a disposable checkout, enable the restriction, check an outside-path file-tool edit is refused, and assert startup failures exit nonzero. Release-note research, not an executed vendor test.",
+    "event_id": "claude-code-v2.1.314-20261030",
+    "event_date": "2026-10-30"
+  },
+  {
+    "id": "ifttt-mcp",
+    "name": "IFTTT.ai MCP",
+    "category": "Automation",
+    "use_case": "Connect an AI assistant to existing app automations without building every integration",
+    "audience": "Builders prototyping cross-app workflows with supported MCP clients",
+    "verdict": "New/unranked candidate for a bounded integration prototype. Start with one disposable destination and explicit action approval, not autonomous access to production accounts.",
+    "tradeoff": "Credits cover Applet runs, MCP usage and AI features; unlimited Applets does not mean unlimited execution. Per-action credit conversion and overage behavior not established here. Client plan/rollout requirements vary, and free polling is hourly. No authenticated workflow or checkout tested.",
+    "privacy": "Official setup uses OAuth and connected service accounts; MCP can create automations and execute real actions. Exact OAuth scopes not inspected. Review each service grant, restrict connected accounts and require confirmation before external writes. This is not a read-only connector.",
+    "pricing": "Checked 2026-10-30: official USD annual-billing display shows Free $0 with 1,000 credits/month; Starter $2.09/month ($25.08 annually), 5,000 credits; Pro $5.49/month ($65.88 annually), 20,000 credits; Pro+ $13.99/month ($167.88 annually), 100,000 credits. Unlimited Applets on all plans; usage is credit-limited. Monthly checkout and per-action consumption not verified. AI client subscription costs may be separate.",
+    "pricing_url": "https://ifttt.com/plans",
+    "url": "https://ifttt.com/mcp",
+    "sources": [
+      "https://ifttt.com/mcp",
+      "https://ifttt.com/plans",
+      "https://ifttt.ai"
+    ],
+    "checked": "2026-10-30",
+    "release_date": null,
+    "evidence": "new/unranked",
+    "news_kind": "new-to-directory / pricing-check",
+    "news": "Official pages now describe IFTTT.ai MCP and credit-based plans. Original release and pricing-transition dates are not established by these undated pages; not presented as a launch today. Proposed workflow: connect a supported client via OAuth to a test IFTTT account, inspect grants, approve a single disposable task action, then verify the destination and credits consumed. Documentation research only; not executed.",
+    "event_id": "ifttt-mcp-new-to-directory-20261030",
+    "event_date": "2026-10-30"
   }
 ]
